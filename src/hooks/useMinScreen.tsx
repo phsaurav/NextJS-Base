@@ -1,3 +1,4 @@
+'use client';
 import { Screens } from '@/types/screen';
 import React, {
   ReactNode,
@@ -6,7 +7,6 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-
 
 interface MinScreenProviderProps {
   children: ReactNode;
