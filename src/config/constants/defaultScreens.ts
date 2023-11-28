@@ -1,6 +1,6 @@
-import { Screens } from "@/utils/minScreen";
+import { Screens } from '@/types/screen';
 
-export const defaultScreens:Screens = {
+export const defaultScreens: Screens = {
   xs: '375px',
   sm: '500px',
   md: '768px',

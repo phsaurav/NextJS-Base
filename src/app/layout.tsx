@@ -1,6 +1,6 @@
 import { defaultScreens } from '@/config/constants/defaultScreens';
 import tailwindConfig from '@/config/theme/tailwind.config';
-import { MinScreenProvider, Screens } from '@/hooks/useMinScreen';
+import { MinScreenProvider} from '@/hooks/useMinScreen';
 import store from '@/redux/store';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -9,6 +9,7 @@ import persistStore from 'redux-persist/es/persistStore';
 import { PersistGate } from 'redux-persist/integration/react';
 import resolveConfig from 'tailwindcss/resolveConfig';
 import './globals.css';
+import { Screens } from '@/types/screen';
 
 const inter = Inter({ subsets: ['latin'] });
 let persistor = persistStore(store);

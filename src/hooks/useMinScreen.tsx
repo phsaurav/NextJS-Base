@@ -1,3 +1,4 @@
+import { Screens } from '@/types/screen';
 import React, {
   ReactNode,
   createContext,
@@ -6,9 +7,6 @@ import React, {
   useState,
 } from 'react';
 
-export interface Screens {
-  [key: string]: string | number;
-}
 
 interface MinScreenProviderProps {
   children: ReactNode;
