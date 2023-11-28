@@ -9,6 +9,8 @@
 1. [Commit Rules](#commit-rules)
 1. [VS Code Configuration](#vs-code-configuration)
 1. [Debugging](#debugging)
+1. [Directory Structure](#directory-structure)
+1. [Tailwind Config](#tailwind-config)
 
 ## Project Setup
 
@@ -296,4 +298,134 @@ With that package installed we can update our `package.json` `dev` script to loo
      "dev": "cross-env NODE_ENV=development NODE_OPTIONS='--inspect' next dev",
   },
 }
+```
+
+## Directory Structure
+	src
+	├ app                           # Application 1 (user)
+	│  ├── __init__.py
+	│  ├── api                       # Holds all apis
+	│  │  └── v1                     # API Version 1
+	│  │    ├── __init__.py
+	│  │    ├── service.py          # Holds all business logic
+	│  │    └── app1.py             # Holds the api routes
+	│  ├── schemas.py                # pydantic models
+	│  ├── models.py                 # db models
+	│  ├── config.py                 # local configs
+	│  ├── constants.py
+	│  └── utils.py
+	├ components                            # Application 2 (blog)
+	│  ├── __init__.py
+	│  ├── api                       # Holds all apis
+	│  │  └── v1                     # API Version 1
+	│  │    ├── __init__.py
+	│  │    ├── service.py          # Holds all business logic
+	│  │    └── app2.py             # Holds the api routes
+	│  ├── schemas.py                # pydantic models
+	│  ├── models.py                 # db models
+	│  ├── config.py                 # local configs
+	│  ├── constants.py
+	│  └── utils.py
+	├ lib                   # Holds all global files
+	│  ├──  __init__.py
+	│  ├── models.py          # Global db models
+	│  ├── config.py          # Global configs
+	│  ├── database.py        # db connection related stuff
+	│  ├── pagination.py      # global module pagination
+	│  ├── constants.py       # Global constants
+	│  └── utils.py
+	├ styles                   # Holds all the test files
+	│  ├── app1
+	│  ├── app2
+	│  └── core
+	├ theme                   # Holds all the test files
+	│  ├── app1
+	│  ├── app2
+	│  └── core
+	├ utils                   # Holds all the test files
+	│  ├── app1
+	│  ├── app2
+	│  └── core
+	├── .eslint.json                  # Holds all environment variables
+	├── .gitignore
+	├── .prettierignore
+	├── .prettierrc
+	├── commitlint.config.js
+	├── next.config.js
+	├── package.json
+	└── yarn.lock
+	└── tailwind.config.js
+	└── tsconfig.json
+
+## Tailwind Config
+`tailwind.config.js`
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+
+    // Or if using `src` directory:
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      // ** This is used to create custom theme
+      letterSpacing: {
+        wide: '.01em',
+        wider: '.05em',
+        widest: '.5em',
+      },
+      fontSize: {
+        xs: '.75rem',
+        sm: '.875rem',
+        tiny: '.875rem',
+        base: '1rem',
+        lg: '1.125rem',
+        xl: '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '1.875rem',
+        '4xl': '2.25rem',
+        '5xl': '3rem',
+        '6xl': '4rem',
+        '7xl': '5rem',
+        '8xl': '7rem',
+        '9xl': '9rem',
+        '10xl': '12rem',
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      screens: {
+        xs: '375px',
+        sm: '500px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1440px',
+        xxl: '1600px',
+        fhd: '1920px',
+      },
+      colors: {
+        brand: {
+          main: {
+            400: '#3579F6',
+          },
+          secondary: {
+            400: '#4D39E5',
+          },
+          dark: '#36404F',
+          bg: '#F6F9FC',
+          accent: '#F3AF3D',
+          error: '#EB4A4E',
+          good: '#54B983',
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
 ```
