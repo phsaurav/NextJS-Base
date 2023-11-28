@@ -1,7 +1,7 @@
 import { defaultScreens } from '@/config/constants/defaultScreens';
 import tailwindConfig from '@/config/theme/tailwind.config';
+import { MinScreenProvider, Screens } from '@/hooks/useMinScreen';
 import store from '@/redux/store';
-import { MinScreenProvider, Screens } from '@/utils/minScreen';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Provider } from 'react-redux';
