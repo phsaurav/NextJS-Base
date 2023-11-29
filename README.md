@@ -83,10 +83,10 @@ If we choose ESLint in nextjs project configuration we should have eslint alread
 
 ### Prettier
 
-Installing prettier and pretty-quick:
+Installing prettier:
 
 ```bash
-yarn add -D prettier pretty-quick
+yarn add -D prettier
 ```
 
 Add prettier ignore file:
@@ -122,7 +122,6 @@ Now we add a new script to `package.json` so we can run Prettier:
   "scripts: {
     ...
     "prettier": "prettier --write ."
-    "pretty-quick": "pretty-quick --staged"
   }
 ```
 
@@ -133,7 +132,7 @@ Husky is a tool for running scripts at different stages of the git process, for 
 To install Husky run
 
 ```
-yarn add -D husky
+yarn add -D husky lint-staged
 
 npx husky install
 ```
