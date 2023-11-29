@@ -83,10 +83,10 @@ If we choose ESLint in nextjs project configuration we should have eslint alread
 
 ### Prettier
 
-Installing prettier:
+Installing prettier and pretty-quick:
 
-```
-yarn add -D prettier
+```bash
+yarn add -D prettier pretty-quick
 ```
 
 Add prettier ignore file:
@@ -122,6 +122,7 @@ Now we add a new script to `package.json` so we can run Prettier:
   "scripts: {
     ...
     "prettier": "prettier --write ."
+    "pretty-quick": "pretty-quick --staged"
   }
 ```
 
@@ -301,64 +302,67 @@ With that package installed we can update our `package.json` `dev` script to loo
 ```
 
 ## Directory Structure
-	src
-	├ app                           # Application 1 (user)
-	│  ├── __init__.py
-	│  ├── api                       # Holds all apis
-	│  │  └── v1                     # API Version 1
-	│  │    ├── __init__.py
-	│  │    ├── service.py          # Holds all business logic
-	│  │    └── app1.py             # Holds the api routes
-	│  ├── schemas.py                # pydantic models
-	│  ├── models.py                 # db models
-	│  ├── config.py                 # local configs
-	│  ├── constants.py
-	│  └── utils.py
-	├ components                            # Application 2 (blog)
-	│  ├── __init__.py
-	│  ├── api                       # Holds all apis
-	│  │  └── v1                     # API Version 1
-	│  │    ├── __init__.py
-	│  │    ├── service.py          # Holds all business logic
-	│  │    └── app2.py             # Holds the api routes
-	│  ├── schemas.py                # pydantic models
-	│  ├── models.py                 # db models
-	│  ├── config.py                 # local configs
-	│  ├── constants.py
-	│  └── utils.py
-	├ lib                   # Holds all global files
-	│  ├──  __init__.py
-	│  ├── models.py          # Global db models
-	│  ├── config.py          # Global configs
-	│  ├── database.py        # db connection related stuff
-	│  ├── pagination.py      # global module pagination
-	│  ├── constants.py       # Global constants
-	│  └── utils.py
-	├ styles                   # Holds all the test files
-	│  ├── app1
-	│  ├── app2
-	│  └── core
-	├ theme                   # Holds all the test files
-	│  ├── app1
-	│  ├── app2
-	│  └── core
-	├ utils                   # Holds all the test files
-	│  ├── app1
-	│  ├── app2
-	│  └── core
-	├── .eslint.json                  # Holds all environment variables
-	├── .gitignore
-	├── .prettierignore
-	├── .prettierrc
-	├── commitlint.config.js
-	├── next.config.js
-	├── package.json
-	└── yarn.lock
-	└── tailwind.config.js
-	└── tsconfig.json
+
+    src
+    ├ app                           # Application 1 (user)
+    │  ├── __init__.py
+    │  ├── api                       # Holds all apis
+    │  │  └── v1                     # API Version 1
+    │  │    ├── __init__.py
+    │  │    ├── service.py          # Holds all business logic
+    │  │    └── app1.py             # Holds the api routes
+    │  ├── schemas.py                # pydantic models
+    │  ├── models.py                 # db models
+    │  ├── config.py                 # local configs
+    │  ├── constants.py
+    │  └── utils.py
+    ├ components                            # Application 2 (blog)
+    │  ├── __init__.py
+    │  ├── api                       # Holds all apis
+    │  │  └── v1                     # API Version 1
+    │  │    ├── __init__.py
+    │  │    ├── service.py          # Holds all business logic
+    │  │    └── app2.py             # Holds the api routes
+    │  ├── schemas.py                # pydantic models
+    │  ├── models.py                 # db models
+    │  ├── config.py                 # local configs
+    │  ├── constants.py
+    │  └── utils.py
+    ├ lib                   # Holds all global files
+    │  ├──  __init__.py
+    │  ├── models.py          # Global db models
+    │  ├── config.py          # Global configs
+    │  ├── database.py        # db connection related stuff
+    │  ├── pagination.py      # global module pagination
+    │  ├── constants.py       # Global constants
+    │  └── utils.py
+    ├ styles                   # Holds all the test files
+    │  ├── app1
+    │  ├── app2
+    │  └── core
+    ├ theme                   # Holds all the test files
+    │  ├── app1
+    │  ├── app2
+    │  └── core
+    ├ utils                   # Holds all the test files
+    │  ├── app1
+    │  ├── app2
+    │  └── core
+    ├── .eslint.json                  # Holds all environment variables
+    ├── .gitignore
+    ├── .prettierignore
+    ├── .prettierrc
+    ├── commitlint.config.js
+    ├── next.config.js
+    ├── package.json
+    └── yarn.lock
+    └── tailwind.config.js
+    └── tsconfig.json
 
 ## Tailwind Config
+
 `tailwind.config.js`
+
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -427,5 +431,4 @@ module.exports = {
   },
   plugins: [],
 };
-
 ```

@@ -1,8 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-interface LoginPageProps {
-
-}
+interface LoginPageProps {}
 
 const LoginPage: React.FC<LoginPageProps> = () => {
   return (
@@ -10,6 +8,6 @@ const LoginPage: React.FC<LoginPageProps> = () => {
       <h1>This is the login page</h1>
     </div>
   );
-}
+};
 
 export default LoginPage;

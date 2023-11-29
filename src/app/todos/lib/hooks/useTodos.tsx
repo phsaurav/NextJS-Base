@@ -1,5 +1,3 @@
-const UseTodos = () => {
-  
-}
+const UseTodos = () => {};
 
 export default UseTodos;

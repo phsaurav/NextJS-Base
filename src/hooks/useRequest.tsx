@@ -7,7 +7,7 @@ const useRequest = (
   authenticated: boolean = false,
   _log: boolean = true,
   _token?: string
-) : Fetcher => {
+): Fetcher => {
   const token = useSelector((state: RootState) => state.auth.token);
   if (authenticated && !_token) _token = token || undefined;
   const logger = getLogger();
