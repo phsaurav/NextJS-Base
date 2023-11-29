@@ -17,7 +17,8 @@
   "lint-staged": {
     "src/**/*.{ts,tsx,js,jsx,json,css}": [
       "yarn prettier --write",
-      "eslint --cache --fix"
+      "eslint --cache --fix",
+      "git add"
     ]
   },
   "dependencies": {
